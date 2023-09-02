@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap");
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Rubik", sans-serif !important;
+}
+
+.css-1mgfgkf-MuiPaper-root {
+  font-family: "Rubik", sans-serif !important;
+}
+
+.css-1lwaxuo-MuiPaper-root {
+  font-family: "Rubik", sans-serif !important;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #1976d2;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.form-wrapper {
+  background-image: url("../public/img/R.jpg");
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.overlay {
+  padding: 0px 20px;
+  height: 100vh;
+  background: #00000070;
+}
+.overlay > p {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  color: white;
+}
+
+.wrap-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.overlay form {
+  background-color: #eee;
+  padding: 20px 40px;
+  border-radius: 5px;
+}
+.overlay form:last-child {
+  text-align: center;
+}
+.overlay form:last-child div:last-child {
+  gap: 30px;
+}
+.overlay form:last-child a:hover {
+  text-decoration: underline;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.avatar-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.avatar-post
+  .MuiFormControl-root.MuiTextField-root.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  flex: 1;
+}
+.avatar-post .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+.post-image > input {
+  width: 0 !important;
+}
+label.img-post {
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px !important;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  -ms-border-radius: 30px !important;
+  -o-border-radius: 30px !important;
+}
+
+.add-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.remove-friend {
+  color: grey !important;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.header-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.header-post .avatar-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.header-post .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #d1d1d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.love-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.love-post > .p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.love-post
+  button.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-1drgtl0-MuiButtonBase-root-MuiIconButton-root {
+  font-size: 17px !important;
+  padding: 5px !important;
+}
+
+.love-post
+  button.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-78trlr-MuiButtonBase-root-MuiIconButton-root {
+  padding: 5px !important;
+}
+
+.love-post
+  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
+  font-size: 18px !important;
+}
+
+.red-icon,
+.grey-icon {
+  display: flex;
+  padding-right: 10px;
+}
+
+.red-icon {
+  color: red;
+}
+.grey-icon {
+  color: grey;
+}
+
+.comment-post {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.comment-post p,
+.comment-post h3 {
+  position: relative;
+  padding: 10px;
+  background: #7575754f;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiMenu-paper.MuiPopover-paper.MuiMenu-paper.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  top: 80px !important;
+  width: fit-content !important;
+  overflow: hidden !important;
+}
+
+.write-post {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 10px 20px;
+  border-top: 1px solid #bdbdbd;
+}
+
+.write-post input {
+  outline: none;
+  padding: 20px 10px;
+  border: 1px solid #bdbdbd;
+  width: 100%;
+  border-radius: 30px;
+  font-size: 18px;
+}
+
+.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.MuiGrid2-spacing-xs-2.css-x3vexg-MuiGrid2-root {
+  justify-content: center !important;
+}
+
+.profile-info-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  gap: 10px;
+}
+
+.user-info {
+  text-align: left;
+  font-size: 18px;
+  flex: 1;
+}
+
+.user-info p {
+  padding: 10px 20px;
+  margin-bottom: 5px;
+
+  border-radius: 10px;
+  /* color: black; */
+}
+
+.nav-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-img-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-friends {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-friends-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.profile-friend-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-container input {
+  outline: none;
+  padding: 10px 20px;
+  border: 1px solid #bdbdbd;
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.search-container .nav-icons {
+  display: flex;
+  position: absolute;
+  right: 10px;
+}
+
+.nav-search {
+  position: absolute;
+  z-index: 6000;
+  top: 40px;
+  right: -65px;
+  background: #eeeeee;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.nav-search > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
