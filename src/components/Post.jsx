@@ -39,7 +39,11 @@ const Post = ({ user }) => {
     formData.append("description", values.description);
     formData.append("photo", values.photo);
     axios
-      .post("/api/v1/posts", formData, configMultiPart)
+      .post(
+        "https://helmy-social-media-api.onrender.com/api/v1/posts",
+        formData,
+        configMultiPart
+      )
       .then((res) => {
         values.description = "";
         values.photo = "";
@@ -79,7 +83,7 @@ const Post = ({ user }) => {
                 alt={user.firstName}
                 src={
                   user.picturePath !== ""
-                    ? `/img/users/${user.picturePath}`
+                    ? `https://helmy-social-media-api.onrender.com/img/users/${user.picturePath}`
                     : null
                 }
               />

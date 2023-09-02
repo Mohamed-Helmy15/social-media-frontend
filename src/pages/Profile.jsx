@@ -88,12 +88,16 @@ const Profile = () => {
       formData.append("picturePath", values.photo);
     }
     axios
-      .patch(`/api/v1/users`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      })
+      .patch(
+        `https://helmy-social-media-api.onrender.com/api/v1/users`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
       .then((res) => {
         handleClose();
         setMessage("Profile has been edited successfully");
@@ -116,22 +120,32 @@ const Profile = () => {
   };
   useEffect(() => {
     axios
-      .get(`/api/v1/users/${localStorage.getItem("currentUser")}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      })
+      .get(
+        `https://helmy-social-media-api.onrender.com/api/v1/users/${localStorage.getItem(
+          "currentUser"
+        )}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
       .then((res) => {
         setCurrentUserFriends(res.data.data.user.friends);
       })
       .catch((err) => err);
     if (window.location.pathname.includes("me")) {
       axios
-        .get(`/api/v1/users/${localStorage.getItem("currentUser")}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
+        .get(
+          `https://helmy-social-media-api.onrender.com/api/v1/users/${localStorage.getItem(
+            "currentUser"
+          )}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
         .then((res) => {
           const date = new Date(res.data.data.user.createdAt);
           const month = date.toLocaleString("default", { month: "long" });
@@ -143,18 +157,21 @@ const Profile = () => {
         })
         .catch((err) => err);
       axios
-        .get(`/api/v1/posts/my-posts`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
+        .get(
+          `https://helmy-social-media-api.onrender.com/api/v1/posts/my-posts`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
         .then((res) => {
           setposts(res.data.data.posts.reverse());
         })
         .catch((err) => err);
       axios
         .get(
-          `/api/v1/users/friends/users/${window.localStorage.getItem(
+          `https://helmy-social-media-api.onrender.com/api/v1/users/friends/users/${window.localStorage.getItem(
             "currentUser"
           )}`,
           {
@@ -169,11 +186,14 @@ const Profile = () => {
         .catch((err) => err);
     } else {
       axios
-        .get(`/api/v1/users/${userId}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
+        .get(
+          `https://helmy-social-media-api.onrender.com/api/v1/users/${userId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
         .then((res) => {
           const date = new Date(res.data.data.user.createdAt);
           const month = date.toLocaleString("default", { month: "long" });
@@ -185,21 +205,27 @@ const Profile = () => {
         })
         .catch((err) => err);
       axios
-        .get(`/api/v1/posts/${userId}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
+        .get(
+          `https://helmy-social-media-api.onrender.com/api/v1/posts/${userId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
         .then((res) => {
           setposts(res.data.data.posts.reverse());
         })
         .catch((err) => err);
       axios
-        .get(`/api/v1/users/friends/users/${userId}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
+        .get(
+          `https://helmy-social-media-api.onrender.com/api/v1/users/friends/users/${userId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
         .then((res) => {
           setFriends(res.data.data.friends);
         })
@@ -349,7 +375,7 @@ const Profile = () => {
                           variant="rounded"
                           src={
                             currentUser.picturePath !== ""
-                              ? `/img/users/${currentUser.picturePath}`
+                              ? `https://helmy-social-media-api.onrender.com/img/users/${currentUser.picturePath}`
                               : ""
                           }
                         />
@@ -466,13 +492,16 @@ const Profile = () => {
                         onClick={() => {
                           if (currentUserFriends.includes(userId)) {
                             axios
-                              .delete(`/api/v1/users/friends/${userId}`, {
-                                headers: {
-                                  Authorization: `Bearer ${localStorage.getItem(
-                                    "token"
-                                  )}`,
-                                },
-                              })
+                              .delete(
+                                `https://helmy-social-media-api.onrender.com/api/v1/users/friends/${userId}`,
+                                {
+                                  headers: {
+                                    Authorization: `Bearer ${localStorage.getItem(
+                                      "token"
+                                    )}`,
+                                  },
+                                }
+                              )
                               .then((res) => {
                                 dispatch(renderProfile());
                               })
@@ -480,7 +509,7 @@ const Profile = () => {
                           } else {
                             axios
                               .post(
-                                `/api/v1/users/friends`,
+                                `https://helmy-social-media-api.onrender.com/api/v1/users/friends`,
                                 {
                                   newFriend: userId,
                                 },
@@ -517,7 +546,7 @@ const Profile = () => {
                               cursor: "pointer",
                             }}
                             variant="rounded"
-                            src={`/img/users/${friend.picturePath}`}
+                            src={`https://helmy-social-media-api.onrender.com/img/users/${friend.picturePath}`}
                           />
 
                           <h3
@@ -539,7 +568,7 @@ const Profile = () => {
                               cursor: "pointer",
                             }}
                             variant="rounded"
-                            src={`/img/users/${friend.picturePath}`}
+                            src={`https://helmy-social-media-api.onrender.com/img/users/${friend.picturePath}`}
                           />
 
                           <h3

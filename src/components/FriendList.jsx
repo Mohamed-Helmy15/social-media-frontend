@@ -49,7 +49,7 @@ const FriendList = ({ friends }) => {
               alt={friend.firstName}
               src={
                 friend.picturePath !== ""
-                  ? `/img/users/${friend.picturePath}`
+                  ? `https://helmy-social-media-api.onrender.com/img/users/${friend.picturePath}`
                   : ""
               }
             />
@@ -84,11 +84,14 @@ const FriendList = ({ friends }) => {
             onClick={(e) => {
               setFriend(!friend);
               axios
-                .delete(`/api/v1/users/friends/${friend._id}`, {
-                  headers: {
-                    Authorization: `Bearer ${localStorage.getItem("token")}`,
-                  },
-                })
+                .delete(
+                  `https://helmy-social-media-api.onrender.com/api/v1/users/friends/${friend._id}`,
+                  {
+                    headers: {
+                      Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    },
+                  }
+                )
                 .then((res) => {
                   dispatch(renderFriends());
                 })

@@ -67,7 +67,11 @@ const Feeds = ({
           <div className="avatar-info">
             <Avatar
               alt=""
-              src={userImage !== "" ? `/img/users/${userImage}` : ""}
+              src={
+                userImage !== ""
+                  ? `https://helmy-social-media-api.onrender.com/img/users/${userImage}`
+                  : ""
+              }
             />
             <div>
               <h4
@@ -101,11 +105,16 @@ const Feeds = ({
               onClick={() => {
                 handleOpen();
                 axios
-                  .delete(`/api/v1/posts/${post}`, {
-                    headers: {
-                      Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    },
-                  })
+                  .delete(
+                    `https://helmy-social-media-api.onrender.com/api/v1/posts/${post}`,
+                    {
+                      headers: {
+                        Authorization: `Bearer ${localStorage.getItem(
+                          "token"
+                        )}`,
+                      },
+                    }
+                  )
                   .then((res) => {
                     handleClose();
                     if (window.location.pathname.includes("profile")) {
@@ -131,11 +140,16 @@ const Feeds = ({
               }}
               onClick={() => {
                 axios
-                  .delete(`/api/v1/users/friends/${user}`, {
-                    headers: {
-                      Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    },
-                  })
+                  .delete(
+                    `https://helmy-social-media-api.onrender.com/api/v1/users/friends/${user}`,
+                    {
+                      headers: {
+                        Authorization: `Bearer ${localStorage.getItem(
+                          "token"
+                        )}`,
+                      },
+                    }
+                  )
                   .then((res) => {
                     setFriend(false);
                     if (window.location.pathname.includes("profile")) {
@@ -163,7 +177,7 @@ const Feeds = ({
               onClick={() => {
                 axios
                   .post(
-                    `/api/v1/users/friends`,
+                    `https://helmy-social-media-api.onrender.com/api/v1/users/friends`,
                     {
                       newFriend: user,
                     },
@@ -211,7 +225,7 @@ const Feeds = ({
             }}
           >
             <img
-              src={`/img/posts/${image}`}
+              src={`https://helmy-social-media-api.onrender.com/img/posts/${image}`}
               alt="img"
               style={{
                 width: "100%",
@@ -259,13 +273,16 @@ const Feeds = ({
                   onClick={(e) => {
                     e.target.style.setProperty("pointer-events", "none");
                     axios
-                      .delete(`/api/v1/posts/${post}/likes`, {
-                        headers: {
-                          Authorization: `Bearer ${localStorage.getItem(
-                            "token"
-                          )}`,
-                        },
-                      })
+                      .delete(
+                        `https://helmy-social-media-api.onrender.com/api/v1/posts/${post}/likes`,
+                        {
+                          headers: {
+                            Authorization: `Bearer ${localStorage.getItem(
+                              "token"
+                            )}`,
+                          },
+                        }
+                      )
                       .then((res) => {
                         e.target.style.removeProperty("pointer-events");
                         e.target.classList.remove("animate__heartBeat");
@@ -288,7 +305,7 @@ const Feeds = ({
                   e.target.style.setProperty("pointer-events", "none");
                   axios
                     .post(
-                      `/api/v1/posts/${post}/likes`,
+                      `https://helmy-social-media-api.onrender.com/api/v1/posts/${post}/likes`,
                       {},
                       {
                         headers: {
@@ -328,7 +345,7 @@ const Feeds = ({
               <Avatar
                 src={
                   comment.user.picturePath !== ""
-                    ? `/img/users/${comment.user.picturePath}`
+                    ? `https://helmy-social-media-api.onrender.com/img/users/${comment.user.picturePath}`
                     : ""
                 }
                 style={{
@@ -387,7 +404,7 @@ const Feeds = ({
                       handleOpen();
                       axios
                         .delete(
-                          `/api/v1/posts/${post}/comments/${comment._id}`,
+                          `https://helmy-social-media-api.onrender.com/api/v1/posts/${post}/comments/${comment._id}`,
                           {
                             headers: {
                               Authorization: `Bearer ${localStorage.getItem(
@@ -444,7 +461,7 @@ const Feeds = ({
               handleOpen();
               axios
                 .post(
-                  `/api/v1/posts/${post}/comments`,
+                  `https://helmy-social-media-api.onrender.com/api/v1/posts/${post}/comments`,
                   { comment },
                   {
                     headers: {

@@ -19,7 +19,7 @@ const NavBar = () => {
   const [search, setSearch] = useState("");
   useEffect(() => {
     axios
-      .get("/api/v1/users", {
+      .get("https://helmy-social-media-api.onrender.com/api/v1/users", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -39,7 +39,7 @@ const NavBar = () => {
 
   const handleLogOut = () => {
     axios
-      .get("/api/v1/users/logout", {
+      .get("https://helmy-social-media-api.onrender.com/api/v1/users/logout", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -97,7 +97,7 @@ const NavBar = () => {
                 }}
               >
                 <Avatar
-                  src={`/img/users/${user.picturePath}`}
+                  src={`https://helmy-social-media-api.onrender.com/img/users/${user.picturePath}`}
                 />
                 <div
                   style={{
@@ -181,7 +181,9 @@ const NavBar = () => {
                             : "#d4d4d4",
                       }}
                     >
-                      <Avatar src={`/img/users/${user.picturePath}`} />
+                      <Avatar
+                        src={`https://helmy-social-media-api.onrender.com/img/users/${user.picturePath}`}
+                      />
                       <div
                         style={{
                           display: "flex",
@@ -218,7 +220,7 @@ const NavBar = () => {
               width: "56px",
               height: "56px",
             }}
-            src={`/img/users/${currentUser.picturePath}`}
+            src={`https://helmy-social-media-api.onrender.com/img/users/${currentUser.picturePath}`}
           />
           <h3
             style={{

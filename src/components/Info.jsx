@@ -16,7 +16,11 @@ const Info = ({ user, length }) => {
       <div className="info-container">
         <Avatar
           sx={{ width: 70, height: 70 }}
-          src={user.picturePath !== "" ? `/img/users/${user.picturePath}` : ""}
+          src={
+            user.picturePath !== ""
+              ? `https://helmy-social-media-api.onrender.com/img/users/${user.picturePath}`
+              : ""
+          }
         />
         <h4
           onClick={() => {

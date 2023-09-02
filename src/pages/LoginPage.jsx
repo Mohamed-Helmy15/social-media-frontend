@@ -14,7 +14,10 @@ const LoginPage = () => {
   const [state, setState] = useState("success");
   const navigate = useNavigate();
   useEffect(() => {
-    if (window.localStorage.getItem("token")) {
+    if (
+      window.localStorage.getItem("token") &&
+      window.localStorage.getItem("token") !== undefined
+    ) {
       navigate("/home");
     }
   }, [loading, alert]);
@@ -32,7 +35,10 @@ const LoginPage = () => {
   const handleFormSubmit = async (values, onSubmitProps) => {
     setLoading(true);
     axios
-      .post("/api/v1/users/login", values)
+      .post(
+        "https://helmy-social-media-api.onrender.com/api/v1/users/login",
+        values
+      )
       .then((res) => {
         navigate("/home");
         localStorage.setItem("token", res.data.token);

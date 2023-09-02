@@ -54,11 +54,15 @@ const UpdatePassword = () => {
     handleOpen();
 
     axios
-      .post(`/api/v1/users/update-password`, values, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      })
+      .post(
+        `https://helmy-social-media-api.onrender.com/api/v1/users/update-password`,
+        values,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
       .then((res) => {
         handleClose();
         setMessage("Password has been edited successfully");

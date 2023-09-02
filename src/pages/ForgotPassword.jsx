@@ -19,7 +19,10 @@ const ForgotPassword = () => {
 
   const handleFormSubmit = async (values, onSubmitProps) => {
     axios
-      .post("/api/v1/users/forgot-password", values)
+      .post(
+        "https://helmy-social-media-api.onrender.com/api/v1/users/forgot-password",
+        values
+      )
       .then((res) => {
         setState("success");
         setMessage(`The link was sent, Please check ${values.email}`);

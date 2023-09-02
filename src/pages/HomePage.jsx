@@ -33,7 +33,7 @@ const HomePage = () => {
 
   const renderFriends = useCallback(() => {
     axios
-      .get("/api/v1/users/friends", {
+      .get("https://helmy-social-media-api.onrender.com/api/v1/users/friends", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -44,11 +44,16 @@ const HomePage = () => {
 
   const renderInfo = useCallback(() => {
     axios
-      .get(`/api/v1/users/${localStorage.getItem("currentUser")}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      })
+      .get(
+        `https://helmy-social-media-api.onrender.com/api/v1/users/${localStorage.getItem(
+          "currentUser"
+        )}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
       .then((res) => {
         setCurrentUser(res.data.data.user);
         setNumOfFriends(res.data.data.user.friends.length);
@@ -58,7 +63,7 @@ const HomePage = () => {
 
   const renderFeeds = useCallback(() => {
     axios
-      .get(`/api/v1/posts/`, {
+      .get(`https://helmy-social-media-api.onrender.com/api/v1/posts/`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

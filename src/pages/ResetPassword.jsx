@@ -24,7 +24,10 @@ const ResetPassword = () => {
 
   const handleFormSubmit = async (values, onSubmitProps) => {
     axios
-      .post(`/api/v1/users/reset-password/${token}`, values)
+      .post(
+        `https://helmy-social-media-api.onrender.com/api/v1/users/reset-password/${token}`,
+        values
+      )
       .then((res) => {
         setState("success");
         setMessage(`Password has been updated successfully`);
