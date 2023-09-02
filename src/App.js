@@ -53,7 +53,8 @@ function App() {
             <Route
               path="/home"
               element={
-                localStorage.getItem("token") ? (
+                window.localStorage.getItem("token") &&
+                window.localStorage.getItem("token") !== "undefined" ? (
                   <HomePage />
                 ) : (
                   <Navigate to="/" />
@@ -64,7 +65,8 @@ function App() {
               <Route
                 path=":userId"
                 element={
-                  localStorage.getItem("token") ? (
+                  window.localStorage.getItem("token") &&
+                  window.localStorage.getItem("token") !== "undefined" ? (
                     <Profile />
                   ) : (
                     <Navigate to="/" />
@@ -75,7 +77,8 @@ function App() {
             <Route
               path="/profile/me"
               element={
-                localStorage.getItem("token") ? (
+                window.localStorage.getItem("token") &&
+                window.localStorage.getItem("token") !== "undefined" ? (
                   <Profile />
                 ) : (
                   <Navigate to="/" />
@@ -85,7 +88,8 @@ function App() {
             <Route
               path="/profile/me/update-password"
               element={
-                localStorage.getItem("token") ? (
+                window.localStorage.getItem("token") &&
+                window.localStorage.getItem("token") !== "undefined" ? (
                   <UpdatePassword />
                 ) : (
                   <Navigate to="/" />

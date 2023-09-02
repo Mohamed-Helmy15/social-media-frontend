@@ -89,16 +89,17 @@ const HomePage = () => {
             spacing={2}
             style={{
               gridColumns: "0 !important",
+              justifyContent: "center",
             }}
           >
             {mediaQuery ? (
               <>
-                <Grid xs={5}>
+                <Grid xs={6}>
                   <Item>
                     <Info user={currentUser} length={numOfFriends} />
                   </Item>
                 </Grid>
-                <Grid xs={7}>
+                <Grid xs={6}>
                   <Item>
                     <FriendList friends={friends} />
                   </Item>
@@ -129,7 +130,7 @@ const HomePage = () => {
               </>
             ) : (
               <>
-                <Grid xs={2.5}>
+                <Grid xs={3}>
                   <Item>
                     <Info user={currentUser} length={numOfFriends} />
                   </Item>
@@ -157,7 +158,7 @@ const HomePage = () => {
                     </Item>
                   ))}
                 </Grid>
-                <Grid xs={3.5}>
+                <Grid xs={3}>
                   <Item>
                     <FriendList friends={friends} />
                   </Item>

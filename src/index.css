@@ -82,17 +82,17 @@ a {
   align-items: center;
   gap: 10px;
 }
-.avatar-post
+/* .avatar-post
   .MuiFormControl-root.MuiTextField-root.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   flex: 1;
-}
-.avatar-post .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
-  border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
-}
+} */
+/* .avatar-post:last-child div {
+  border-radius: 30px !important;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  -ms-border-radius: 30px !important;
+  -o-border-radius: 30px !important;
+} */
 .post-image > input {
   width: 0 !important;
 }
@@ -236,9 +236,9 @@ label.img-post {
   font-size: 18px;
 }
 
-.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.MuiGrid2-spacing-xs-2.css-x3vexg-MuiGrid2-root {
+/* .MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.MuiGrid2-spacing-xs-2.css-x3vexg-MuiGrid2-root {
   justify-content: center !important;
-}
+} */
 
 .profile-info-container {
   display: flex;

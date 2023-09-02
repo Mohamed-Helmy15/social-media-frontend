@@ -245,7 +245,13 @@ const Profile = () => {
           </Stack>
         )}
         <Box sx={{ flexGrow: 1, justifyContent: "center" }}>
-          <Grid container spacing={2}>
+          <Grid
+            container
+            spacing={2}
+            style={{
+              justifyContent: "center",
+            }}
+          >
             <Grid xs={10}>
               <Item>
                 {edit ? (

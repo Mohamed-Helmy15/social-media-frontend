@@ -16,7 +16,7 @@ const LoginPage = () => {
   useEffect(() => {
     if (
       window.localStorage.getItem("token") &&
-      window.localStorage.getItem("token") !== undefined
+      window.localStorage.getItem("token") !== "undefined"
     ) {
       navigate("/home");
     }
@@ -40,9 +40,12 @@ const LoginPage = () => {
         values
       )
       .then((res) => {
-        navigate("/home");
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("currentUser", res.data.data.user._id);
+        if (!localStorage.getItem("theme")) {
+          localStorage.setItem("theme", "light");
+        }
+        navigate("/home");
       })
 
       .catch((err) => {

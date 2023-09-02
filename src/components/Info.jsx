@@ -32,7 +32,7 @@ const Info = ({ user, length }) => {
         >
           {user.firstName} {user.lastName}
         </h4>
-        <p>{user.email}</p>
+
         <p>{length} friends</p>
         <p>Joined At: {formattedDate}</p>
       </div>

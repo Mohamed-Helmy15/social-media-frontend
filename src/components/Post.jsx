@@ -88,6 +88,9 @@ const Post = ({ user }) => {
                 }
               />
               <TextField
+                style={{
+                  flex: 1,
+                }}
                 label="What is on your mind..."
                 onChange={handleChange}
                 value={values.description}
@@ -96,6 +99,11 @@ const Post = ({ user }) => {
                   Boolean(touched.description) && Boolean(errors.description)
                 }
                 helperText={touched.description && errors.description}
+                InputProps={{
+                  style: {
+                    borderRadius: "30px",
+                  },
+                }}
               />
             </div>
             <div className="post-image">
