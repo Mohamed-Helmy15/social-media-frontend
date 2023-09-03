@@ -53,7 +53,7 @@ function App() {
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route
-                path="/home"
+                path="https://helmy-social-media.onrender.com/home"
                 element={
                   <RequireAuth loginPath={"/"}>
                     <HomePage />
