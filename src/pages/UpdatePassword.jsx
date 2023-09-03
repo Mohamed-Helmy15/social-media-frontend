@@ -96,7 +96,13 @@ const UpdatePassword = () => {
           </Stack>
         )}
         <Box sx={{ flexGrow: 1, justifyContent: "center" }}>
-          <Grid container spacing={2}>
+          <Grid
+            container
+            spacing={2}
+            style={{
+              justifyContent: "center",
+            }}
+          >
             <Grid xs={8}>
               <Item>
                 <div>

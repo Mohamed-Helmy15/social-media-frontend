@@ -6,21 +6,16 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
 import axios from "axios";
+import { useSignIn } from "react-auth-kit";
 
 const LoginPage = () => {
+  const signIn = useSignIn();
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(false);
   const [message, setMessage] = useState("");
   const [state, setState] = useState("success");
   const navigate = useNavigate();
-  useEffect(() => {
-    if (
-      window.localStorage.getItem("token") &&
-      window.localStorage.getItem("token") !== "undefined"
-    ) {
-      navigate("/home");
-    }
-  }, [loading, alert]);
+  useEffect(() => {}, [loading, alert]);
 
   const loginSchema = yup.object().shape({
     email: yup.string().email("invalid email").required("required"),
@@ -40,12 +35,19 @@ const LoginPage = () => {
         values
       )
       .then((res) => {
-        localStorage.setItem("token", res.data.token);
+        signIn({
+          token: res.data.token,
+          expiresIn: 100000,
+          tokenType: "Bearer",
+          authState: { userName: "helmy" },
+        });
+
         localStorage.setItem("currentUser", res.data.data.user._id);
         if (!localStorage.getItem("theme")) {
           localStorage.setItem("theme", "light");
         }
         navigate("/home");
+        window.location.reload();
       })
 
       .catch((err) => {

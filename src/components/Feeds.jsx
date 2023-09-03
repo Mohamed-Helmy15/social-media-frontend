@@ -395,7 +395,7 @@ const Feeds = ({
                   {comment.comment}
                 </p>
                 {comment.user._id === localStorage.getItem("currentUser") ||
-                window.location.pathname.includes("me") ? (
+                window.location.pathname.includes("profile/me") ? (
                   <div
                     style={{
                       display: "flex",

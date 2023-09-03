@@ -10,8 +10,10 @@ import { useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { useSignOut } from "react-auth-kit";
 const NavBar = () => {
   const mediaQuery = useMediaQuery("(max-width:600px)");
+  const signOut = useSignOut();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [allUsers, setAllUsers] = useState([]);
@@ -45,7 +47,7 @@ const NavBar = () => {
         },
       })
       .then((res) => {
-        localStorage.removeItem("token");
+        signOut();
         localStorage.removeItem("currentUser");
         navigate("/");
       })
@@ -55,7 +57,7 @@ const NavBar = () => {
   return (
     <nav
       style={{
-        position: "sticky",
+        position: mediaQuery ? "relative" : "sticky",
         top: "0px",
         zIndex: "5000",
         background:
@@ -72,56 +74,6 @@ const NavBar = () => {
         gap: mediaQuery && "15px",
       }}
     >
-      {/* {search !== "" ? (
-        <div
-          className="nav-search"
-          style={{
-            background:
-              localStorage.getItem("theme") === "dark" ? "black" : "white",
-          }}
-        >
-          {allUsers
-            .filter(
-              (user) =>
-                user.firstName.includes(search) ||
-                user.lastName.includes(search)
-            )
-            .map((user) => (
-              <div
-                key={user._id}
-                style={{
-                  background:
-                    localStorage.getItem("theme") === "dark"
-                      ? "#3e4247"
-                      : "#d4d4d4",
-                }}
-              >
-                <Avatar
-                  src={`https://helmy-social-media-api.onrender.com/img/users/${user.picturePath}`}
-                />
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <p
-                    style={{
-                      cursor: "pointer",
-                    }}
-                    onClick={() => {
-                      setSearch("");
-                      navigate(`/profile/${user._id}`);
-                    }}
-                  >
-                    {user.firstName} {user.lastName}
-                  </p>
-                  {currentUser.friends.includes(user._id) && <h6>friend</h6>}
-                </div>
-              </div>
-            ))}
-        </div>
-      ) : null} */}
       <h1
         style={{
           color: "#0755ff",
