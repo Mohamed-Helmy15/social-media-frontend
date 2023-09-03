@@ -1,7 +1,7 @@
 import "./App.css";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider, RequireAuth } from "react-auth-kit";
 import LoginPage from "./pages/LoginPage";
 import Register from "./pages/Register";
