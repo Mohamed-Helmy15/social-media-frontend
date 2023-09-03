@@ -47,7 +47,7 @@ const LoginPage = () => {
           localStorage.setItem("theme", "light");
         }
         navigate("/home");
-        window.location.reload();
+        // window.location.reload();
       })
 
       .catch((err) => {
