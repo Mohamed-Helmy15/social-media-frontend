@@ -46,7 +46,7 @@ const LoginPage = () => {
         if (!localStorage.getItem("theme")) {
           localStorage.setItem("theme", "light");
         }
-        navigate("https://helmy-social-media.onrender.com/home");
+        navigate("/home");
         // window.location.reload();
       })
 
