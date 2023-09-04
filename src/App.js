@@ -41,7 +41,9 @@ function App() {
           <div
             style={{
               background:
-                localStorage.getItem("theme") === "light" ? "#eee" : "#242424",
+                localStorage.getItem("theme") === "light"
+                  ? "#eee"
+                  : "#0000008f",
               minHeight: "100vh",
               maxHeight: "100%",
               transition: "0.3s",
